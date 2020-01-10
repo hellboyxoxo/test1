@@ -1,7 +1,9 @@
 #include<stdio.h>
 #include<string.h>
+
 int slen(const char*);
 int scmp(char*,const char*);
+char* scpy(char*,const char*);
 
 int main()
 {
@@ -18,16 +20,19 @@ int main()
  k=scmp(a,b);
  if(k==0)
  {
-  printf("equal");
+  printf("equal strings\n");
  }
  else if(k==1)
  {
-  printf("first string is larger");
+  printf("first string is larger\n");
  }
  else
  {
-  printf("second string is larger");
+  printf("second string is larger\n");
  }
+ char c[30];
+ scpy(c,a)
+ printf("copied string = %s",c);
 }
 
 int slen(const char *p)
@@ -61,3 +66,15 @@ int scmp(char *p,const char *q)
   }
  }
 } 
+
+char* scpy(charc*p,const char *q)
+{
+ int i=0;
+ while(q[i]!='\0')
+ {
+  p[i]=q[i];
+  i++
+ }
+ p[i]='\0';
+ return i;
+}
