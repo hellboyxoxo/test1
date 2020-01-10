@@ -3,18 +3,18 @@
 
 int slen(const char*);
 int scmp(char*,const char*);
-char* scpy(char*,const char*);
+int scpy(char*,const char*);
 
 int main()
 {
  char a[30],b[30];
  int i,j,k;
  printf("enter the string number 1: \n");
- scanf("%s",&a);
+ scanf("%29s",&a);
  i=slen(a);
  printf("string length of first string = %d\n",i);
  printf("enter the string number 2: \n");
- scanf("%s",&b);
+ scanf("%29s",&b);
  j=slen(b);
  printf("string length of first string = %d\n",j);
  k=scmp(a,b);
@@ -31,7 +31,7 @@ int main()
   printf("second string is larger\n");
  }
  char c[30];
- scpy(c,a)
+ scpy(c,a);
  printf("copied string = %s",c);
 }
 
@@ -67,13 +67,13 @@ int scmp(char *p,const char *q)
  }
 } 
 
-char* scpy(charc*p,const char *q)
+int scpy(char *p,const char *q)
 {
  int i=0;
  while(q[i]!='\0')
  {
   p[i]=q[i];
-  i++
+  i++;
  }
  p[i]='\0';
  return i;
