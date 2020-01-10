@@ -1,15 +1,33 @@
 #include<stdio.h>
 #include<string.h>
 int slen(const char*);
+int scmp(char*,const char*);
 
 int main()
 {
- char a[30];
- int i;
- printf("enter the string: \n");
+ char a[30],b[30];
+ int i,j,k;
+ printf("enter the string number 1: \n");
  gets(a);
  i=slen(a);
- printf("string length = %d",i);
+ printf("string length of first string = %d\n",i);
+ printf("enter the string number 2: \n");
+ gets(b);
+ j=slen(b);
+ printf("string length of first string = %d\n",j);
+ k=scmp(a,b);
+ if(k==0)
+ {
+  printf("equal");
+ }
+ else if(k==1)
+ {
+  printf("first string is larger");
+ }
+ else
+ {
+  printf("second string is larger");
+ }
 }
 
 int slen(const char *p)
@@ -22,3 +40,24 @@ int slen(const char *p)
  }
  return count;
 }
+
+int scmp(char *p,const char *q)
+{
+ int i=0;
+ while(p[i]==q[i]&&p[i]!='\0'&&q[i]!='\0')
+ {
+  i++;
+  if(p[i]==q[i])
+  {
+   return 0;
+  }
+  else if(p[i]>q[i])
+  {
+   return 1;
+  }
+  else
+  {
+   return -1;
+  }
+ }
+} 
