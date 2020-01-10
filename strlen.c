@@ -10,11 +10,11 @@ int main()
  char a[30],b[30];
  int i,j,k;
  printf("enter the string number 1: \n");
- gets(a);
+ scanf("%s",&a);
  i=slen(a);
  printf("string length of first string = %d\n",i);
  printf("enter the string number 2: \n");
- gets(b);
+ scanf("%s",&b);
  j=slen(b);
  printf("string length of first string = %d\n",j);
  k=scmp(a,b);
